@@ -1,7 +1,5 @@
 <?php
 
-#use PhpAmqpLib\Connection\AMQPStreamConnection;
-
 require_once('get_host_info.inc');
 
 class rabbitMQServer
@@ -71,8 +69,6 @@ class rabbitMQServer
       $params['port'] = $this->BROKER_PORT;
       $params['login'] = $this->USER;
       $params['password'] = $this->PASSWORD;
-      #$params['login'] = "test";
-      #$params['password'] = "test";
 
       $params['vhost'] = $this->VHOST;
 			$conn = new AMQPConnection($params);
