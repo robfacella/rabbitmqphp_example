@@ -21,13 +21,13 @@ class rabbitMQServer
 		$this->machine = getHostInfo(array($machine));
 		$this->BROKER_HOST   = $this->machine[$server]["BROKER_HOST"];
 		$this->BROKER_PORT   = $this->machine[$server]["BROKER_PORT"];
-		# $this->USER     = $this->machine[$server]["USER"];
-		# $this->PASSWORD = $this->machine[$server]["PASSWORD"];
-                $this->USER     = 'test';
-                $this->PASSWORD = 'test';
+		$this->USER     = $this->machine[$server]["USER"];
+		$this->PASSWORD = $this->machine[$server]["PASSWORD"];
+                #$this->USER     = 'test';
+                #$this->PASSWORD = 'test';
 
-		#$this->VHOST = $this->machine[$server]["VHOST"];
-		$this->VHOST = 'TESTHOST';
+		$this->VHOST = $this->machine[$server]["VHOST"];
+		#$this->VHOST = 'TESTHOST';
 		if (isset( $this->machine[$server]["EXCHANGE_TYPE"]))
 		{
 			$this->exchange_type = $this->machine[$server]["EXCHANGE_TYPE"];
@@ -36,10 +36,10 @@ class rabbitMQServer
 		{
 			$this->auto_delete = $this->machine[$server]["AUTO_DELETE"];
 		}
-		#$this->exchange = $this->machine[$server]["EXCHANGE"];
-		$this->exchange = 'TESTEXCHANGE';
-		#$this->queue = $this->machine[$server]["QUEUE"];
-		$this->queue = 'TESTQUEUE';
+		$this->exchange = $this->machine[$server]["EXCHANGE"];
+		#$this->exchange = 'TESTEXCHANGE';
+		$this->queue = $this->machine[$server]["QUEUE"];
+		#$this->queue = 'TESTQUEUE';
 	}
 
 	function process_message($msg)
@@ -160,13 +160,13 @@ class rabbitMQClient
 		$this->machine = getHostInfo(array($machine));
 		$this->BROKER_HOST   = $this->machine[$server]["BROKER_HOST"];
 		$this->BROKER_PORT   = $this->machine[$server]["BROKER_PORT"];
-		#$this->USER     = $this->machine[$server]["USER"];		
-		#$this->PASSWORD = $this->machine[$server]["PASSWORD"];
-                $this->USER     = 'test';
-                $this->PASSWORD = 'test';
+		$this->USER     = $this->machine[$server]["USER"];		
+		$this->PASSWORD = $this->machine[$server]["PASSWORD"];
+                #$this->USER     = 'test';
+                #$this->PASSWORD = 'test';
 
-		#$this->VHOST = $this->machine[$server]["VHOST"];
-		$this->VHOST = 'TESTHOST';
+		$this->VHOST = $this->machine[$server]["VHOST"];
+		#$this->VHOST = 'TESTHOST';
 
 		if (isset( $this->machine[$server]["EXCHANGE_TYPE"]))
 		{
@@ -176,10 +176,10 @@ class rabbitMQClient
 		{
 			$this->auto_delete = $this->machine[$server]["AUTO_DELETE"];
 		}
-		#$this->exchange = $this->machine[$server]["EXCHANGE"];
-		#$this->queue = $this->machine[$server]["QUEUE"];
-                $this->exchange = 'TESTEXCHANGE';
-                $this->queue = 'TESTQUEUE';
+		$this->exchange = $this->machine[$server]["EXCHANGE"];
+		$this->queue = $this->machine[$server]["QUEUE"];
+                #$this->exchange = 'TESTEXCHANGE';
+                #$this->queue = 'TESTQUEUE';
 
 	}
 
